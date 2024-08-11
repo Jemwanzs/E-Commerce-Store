@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products|JMStore</title>
+    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo2.png" width="150px">
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <!--add clickable menu using tag <a></a> to link pages-->
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/shopping-bag1.png" width="30px" height="30px">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+
+        </div>
+    </div>
+
+    <!-----account creation------->
+
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/patek4.webp" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="Login()">Login</span>
+                            <span onclick="Register()">Register</span>
+                            <hr id="indicator">
+                        </div>
+                        <form id="loginForm">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forgot password</a>
+                        </form>
+                        <form id="registerForm">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!------- footer ------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo3.png">
+                    <p>Indulge in our stunning collection of high-end watches, rings, and chains, alongside
+                        the latest iPhones and AirPods. Don't miss our dazzling Gold Stones - the perfect touch of
+                        elegance—James
+                        Sammy, Director and Founder</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Account</li>
+                        <li>Blog</li>
+                        <li>Join Community</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Twiter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>Facebook</li>
+                        <li>TikTok</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Download our App</h3>
+                    <p>Android & ios users</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png">
+                        <img src="images/appstore.png">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
+        </div>
+
+    </div>
+    <!--------js for menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!---------js toggle forms------->
+    <script>
+        var loginForm = document.getElementById("loginForm");
+        var registerForm = document.getElementById("registerForm");
+        var indicator = document.getElementById("indicator");
+
+        function Register() {
+            registerForm.style.transform = "translateX(0px)";
+            loginForm.style.transform = "translateX(0px)";
+            indicator.style.transform = "translateX(100px)";
+        }
+        function Login() {
+            registerForm.style.transform = "translateX(300px)";
+            loginForm.style.transform = "translateX(300px)";
+            indicator.style.transform = "translateX(0px)";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

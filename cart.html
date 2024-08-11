@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products|JMStore</title>
+    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo2.png" width="150px">
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <!--add clickable menu using tag <a></a> to link pages-->
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/shopping-bag1.png" width="30px" height="30px">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+
+        </div>
+    </div>
+
+    <!------adding to cart--------->
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>subtotal</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/patek4.webp">
+                        <div>
+                            <p>Patek Philippe</p>
+                            <small>$ 100,000</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1" min="0"></td>
+                <td>$ 100,000</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/patek4.jpeg">
+                        <div>
+                            <p>Rolex Daytona</p>
+                            <small>$ 150,000</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1" min="1"></td>
+                <td>$ 150,000</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/patek2.jpg">
+                        <div>
+                            <p>Tag Heuer</p>
+                            <small>$ 50,000</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1" min="1"></td>
+                <td>$ 50,000</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/patek1.jpg">
+                        <div>
+                            <p>Audemars</p>
+                            <small>$ 20,000</small>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1" min="1"></td>
+                <td>$ 20,000</td>
+            </tr>
+        </table>
+
+        <div class="total-cost">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$ 320,000</td>
+                </tr>
+                <tr>
+                    <td>VAT Tax</td>
+                    <td>$ 51,200</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$ 371,200</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!------- footer ------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo3.png">
+                    <p>Indulge in our stunning collection of high-end watches, rings, and chains, alongside
+                        the latest iPhones and AirPods. Don't miss our dazzling Gold Stones - the perfect touch of
+                        elegance—James
+                        Sammy, Director and Founder</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Account</li>
+                        <li>Blog</li>
+                        <li>Join Community</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Twiter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>Facebook</li>
+                        <li>TikTok</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Download our App</h3>
+                    <p>Android & ios users</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png">
+                        <img src="images/appstore.png">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
+        </div>
+
+    </div>
+    <!--------js for menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

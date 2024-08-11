@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products|JMStore</title>
+    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/logo2.png" width="150px">
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <!--add clickable menu using tag <a></a> to link pages-->
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/shopping-bag1.png" width="30px" height="30px">
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+
+        </div>
+    </div>
+
+
+    <!---------product details-------->
+
+    <div class="small-container product-details">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/patek1.jpg" width="100%" id="productImg">
+                <div class="small-img-row">
+                    <div class="small-img-column">
+                        <img src="images/patek8.webp" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-column">
+                        <img src="images/patek4.jpeg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-column">
+                        <img src="images/patek4.webp" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-column">
+                        <img src="images/patek5.webp" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <p>Patek</p>
+                <h1>Patek Philippe</h1>
+                <h4>$ 100,000</h4>
+                <select>
+                    <option>Select color</option>
+                    <option>White</option>
+                    <option>Black</option>
+                    <option>Red</option>
+                    <option>Gray</option>
+                    <option>Brown</option>
+                    <option>Maroon</option>
+                    <option>Other</option>
+                </select>
+                <input type="number" value="1" class="input-style" min="0">
+                <a href="" class="btn">ADD TO CART</a>
+                <h3>Details <i class="fa-solid fa-indent"></i> </h3>
+                <p>Experience timeless elegance with a Patek Philippe watch. Its exceptional craftsmanship and design
+                    make it the ultimate
+                    luxury statement. Elevate your style today.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-------title------>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>More Products</h2>
+            <p>explore...</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!------product--------->
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <img src="images/patek1.jpg" alt="Patek Philippe">
+                <h4>Patek Philippe</h4>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p>$ 100,000</p>
+            </div>
+            <div class="col-4">
+                <img src="images/patek2.jpg" alt="Rolex Daytona">
+                <h4>Rolex Daytona</h4>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>$ 150,000</p>
+            </div>
+            <div class="col-4">
+                <img src="images/patek1.jpg" alt="Audemars">
+                <h4>Audemars</h4>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p>$ 20,000</p>
+            </div>
+            <div class="col-4">
+                <img src="images/patek2.jpg" alt="Tag Heuer">
+                <h4>Tag Heuer</h4>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <p>$ 50,000</p>
+            </div>
+        </div>
+
+    </div>
+    <!------- footer ------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo3.png">
+                    <p>Indulge in our stunning collection of high-end watches, rings, and chains, alongside
+                        the latest iPhones and AirPods. Don't miss our dazzling Gold Stones - the perfect touch of
+                        elegance—James
+                        Sammy, Director and Founder</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Account</li>
+                        <li>Blog</li>
+                        <li>Join Community</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Twiter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>Facebook</li>
+                        <li>TikTok</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Download our App</h3>
+                    <p>Android & ios users</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png">
+                        <img src="images/appstore.png">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
+        </div>
+
+    </div>
+    <!--------js for menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!-------js for product details------->
+    <script>
+        var productImg = document.getElementById("productImg");
+        var smallImg = document.getElementsByClassName("small-img");
+        smallImg[0].onclick = function () {
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function () {
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function () {
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function () {
+            productImg.src = smallImg[3].src;
+        }
+
+    </script>
+
+</body>
+
+</html>
