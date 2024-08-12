@@ -339,34 +339,40 @@ small {
     color: #8a8a8a;
     font-size: 15px;
     padding: 60px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer p {
     color: #8a8a8a;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .footer h3 {
     color: #fff;
-    padding: 15px;
-    padding-top: 0 0;
-    margin-top: 0px;
+    padding: 10px 0;
+    margin-top: 0;
 }
 
 .footer-col-1,
 .footer-col-2,
 .footer-col-3,
 .footer-col-4 {
-    min-width: 250px;
+    min-width: 200px;
     margin-bottom: 20px;
-}
-
-.footer-col-4 {
-    flex-basis: 30%;
+    text-align: center;
 }
 
 .footer-col-1 {
     flex: 1;
-    text-align: center;
+}
+
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+    flex: 1;
 }
 
 .footer-col-1 img {
@@ -374,23 +380,33 @@ small {
     margin-bottom: 10px;
 }
 
-.footer-col-2,
-.footer-col-3,
-.footer-col-4 {
-    text-align: center;
-    flex-basis: 15%;
-}
-
 ul {
     list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #fff;
 }
 
 .app-logo {
     margin-top: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 .app-logo img {
     width: 120px;
+    margin: 0 10px;
 }
 
 .app-logo img:hover {
@@ -401,11 +417,33 @@ ul {
     border: none;
     background: #b5b5b5;
     height: 2px;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .copyright {
     text-align: center;
+    margin: 20px 0;
+}
+
+/* Responsive design for footer columns */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .app-logo img {
+        width: 100px;
+        margin: 0 5px;
+    }
 }
 
 /*---------menu icon-----*/
@@ -558,7 +596,7 @@ td a {
 .total-cost table {
     border-top: 5px solid green;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
 }
 
 td:last-child {
@@ -664,15 +702,22 @@ form a {
     color: #777;
 }
 
-.uline {
-    /* underlining */
+.about .col-2 {
+    text-align: center;
+    margin: 0 auto;
+    /* Center the container if it has a fixed width */
+}
+
+.unline {
+    display: inline-block;
     height: 4px;
-    width: 4rem;
+    /* Adjust height as needed */
+    width: 80px;
     background-color: green;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    margin-left: 480px;
-    align-content: center;
+    border-radius: 2px;
+    /* Optional: gives a rounded effect */
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 /* Contact Form */
@@ -758,11 +803,24 @@ form a {
 
 .blog h1 {
     color: green;
-    font-size: medium;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .blog h2 {
-    color: #868a8f;
+    color: #777;
+    margin: 20px 0 5px;
+}
+
+.underline2 {
+    height: 4px;
+    /* Fixed height */
+    width: 3rem;
+    background-color: gold;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-bottom: 5px;
 }
 
 .blog ul {
