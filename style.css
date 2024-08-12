@@ -425,27 +425,6 @@ ul li a:hover {
     margin: 20px 0;
 }
 
-/* Responsive design for footer columns */
-@media (max-width: 768px) {
-    .footer {
-        padding: 30px 0;
-    }
-
-    .footer-col-1,
-    .footer-col-2,
-    .footer-col-3,
-    .footer-col-4 {
-        flex: 1 1 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .app-logo img {
-        width: 100px;
-        margin: 0 5px;
-    }
-}
-
 /*---------menu icon-----*/
 .menu-icon {
     width: 30px;
@@ -983,5 +962,26 @@ form a {
     .menu-icon {
         display: block;
         cursor: pointer;
+    }
+}
+
+/* Responsive design for footer columns */
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .app-logo img {
+        width: 100px;
+        margin: 0 5px;
     }
 }
