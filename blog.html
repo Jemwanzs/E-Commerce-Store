@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMStore | Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo2.png" width="150px" alt="Logo"></a>
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="community.html">Join Community</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/shopping-bag1.png" width="30px" height="30px" alt="Cart"></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+            </div>
+        </div>
+    </div>
+
+    <!-- blog -->
+
+    <div class="blog">
+        <div class="container">
+            <h1>Elevate Your Elegance: The Ultimate Guide to Watches, Perfumes, and Necklaces</h1>
+            <p>In the world of luxury, the right accessories can transform your look and enhance your personal style. At
+                JMS, we offer an exclusive selection of high-end watches, exquisite perfumes, and stunning necklaces.
+                Each
+                category represents a blend of sophistication, craftsmanship, and elegance, designed to elevate your
+                everyday ensemble.</p>
+
+            <h2>Watches</h2>
+            <p>Discover top-notch timepieces that are not just functional but also a statement of style and precision.
+                Here
+                are six standout options:</p>
+            <ul>
+                <li><strong>Rolex Submariner</strong> - Price: $8,000 - $12,000</li>
+                <li><strong>Omega Speedmaster Professional</strong> - Price: $5,000 - $7,000</li>
+                <li><strong>Patek Philippe Nautilus</strong> - Price: $30,000 - $60,000</li>
+                <li><strong>Audemars Piguet Royal Oak</strong> - Price: $20,000 - $40,000</li>
+                <li><strong>Tag Heuer Carrera</strong> - Price: $3,000 - $5,000</li>
+                <li><strong>Breitling Navitimer</strong> - Price: $4,000 - $6,000</li>
+            </ul>
+
+            <h2>Perfumes</h2>
+            <p>Elevate your presence with fragrances that captivate and charm. Consider these top selections:</p>
+            <ul>
+                <li><strong>Chanel No. 5</strong> - Price: $100 - $200 (50ml)</li>
+                <li><strong>Dior Sauvage Eau de Toilette</strong> - Price: $90 - $150 (60ml)</li>
+                <li><strong>Creed Aventus</strong> - Price: $300 - $400 (50ml)</li>
+                <li><strong>Tom Ford Black Orchid</strong> - Price: $130 - $200 (50ml)</li>
+                <li><strong>Yves Saint Laurent La Nuit de L'Homme</strong> - Price: $80 - $130 (60ml)</li>
+                <li><strong>Gucci Bloom</strong> - Price: $85 - $150 (50ml)</li>
+            </ul>
+
+            <h2>Necklaces</h2>
+            <p>Complete your look with necklaces that add a touch of glamour and refinement. Here are six elegant
+                choices:
+            </p>
+            <ul>
+                <li><strong>Tiffany & Co. Schlumberger® Bird on a Rock Pendant</strong> - Price: $5,000 - $7,000</li>
+                <li><strong>Cartier Love Necklace</strong> - Price: $3,000 - $6,000</li>
+                <li><strong>Harry Winston Diamond Pendant Necklace</strong> - Price: $10,000 - $20,000</li>
+                <li><strong>Chopard Happy Diamonds Necklace</strong> - Price: $4,000 - $8,000</li>
+                <li><strong>Bvlgari B.Zero1 Necklace</strong> - Price: $1,500 - $3,000</li>
+                <li><strong>Van Cleef & Arpels Alhambra Necklace</strong> - Price: $3,000 - $5,000</li>
+            </ul>
+
+            <p>Explore our curated selections and discover how these timeless accessories can elevate your style and
+                make
+                every moment extraordinary. At JMS, we are committed to providing you with the finest in luxury and
+                elegance.</p>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/patek1.jpg" alt="Patek Philippe">
+                    <h4>Patek Philippe</h4>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/doom6.jpg">
+                    <h4>Tom Ford Black Orchid</h4>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>ss
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/chain1.jpg" alt="Rolex Daytona">
+                    <h4>Buccellati Macri</h4>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="images/iphone3.jpg">
+                    <h4>iphone Xs</h4>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo3.png" alt="Footer Logo">
+                    <p>Indulge in our stunning collection of high-end watches, rings, and chains, alongside the latest
+                        iPhones and AirPods. Don't miss our dazzling Gold Stones - the perfect touch of elegance—James
+                        Sammy, Director and Founder</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="community.html">Join Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://twitter.com">Twitter</a></li>
+                        <li><a href="https://instagram.com">Instagram</a></li>
+                        <li><a href="https://youtube.com">YouTube</a></li>
+                        <li><a href="https://facebook.com">Facebook</a></li>
+                        <li><a href="https://tiktok.com">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Download Our App</h3>
+                    <p>Android & iOS users</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png" alt="Play Store">
+                        <img src="images/appstore.png" alt="App Store">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            } else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

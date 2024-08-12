@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMStore | Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo2.png" width="150px" alt="Logo"></a>
+                </div>
+                <nav>
+                    <ul id="menuItems">
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="community.html">Join Community</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/shopping-bag1.png" width="30px" height="30px" alt="Cart"></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" alt="Menu">
+            </div>
+        </div>
+    </div>
+
+    <!-- blog -->
+    <div class="container">
+        <div class="community">
+            <div class="community-content">
+                <div class="community-col-1">
+                    <h2>Our Thriving Community</h2>
+                    <p>Join a dynamic and engaged community of over 500+ members who share a passion for excellence and
+                        innovation.<br><br>Our community is a vibrant network of professionals, enthusiasts, and
+                        aficionados
+                        dedicated to exploring and celebrating the finest in luxury, technology, and business solutions.
+                        <br><br>Together,
+                        we foster a culture of growth, learning, and mutual support, making our community a cornerstone
+                        of shared success and achievement.
+                    </p>
+
+                    <h3>Register Now</h3>
+                    <form action="mailto:jamosammy@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+                <div class="community-col-2">
+                    <img src="images/patek4.webp" width="200px" height="380px">
+                    <img src="images/communityPhoto1.webp" width="150px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            } else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+
+</html>

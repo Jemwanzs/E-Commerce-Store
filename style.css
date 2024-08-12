@@ -655,6 +655,205 @@ form a {
     transition: transform 1s;
 }
 
+.aboutUs {
+    text-align: center;
+    padding: 40px 0 40px;
+}
+
+.aboutUs h2 {
+    color: #777;
+}
+
+.uline {
+    /* underlining */
+    height: 4px;
+    width: 4rem;
+    background-color: green;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 480px;
+    align-content: center;
+}
+
+/* Contact Form */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-groupContact {
+    margin-bottom: 15px;
+}
+
+.form-groupContact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 400px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.btn-primary {
+    background: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: green;
+}
+
+.border-start {
+    border-left: 2px solid #ddd;
+    padding-left: 60px;
+    height: 400px;
+}
+
+.main-heading {
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+}
+
+.col-md-6 h6 {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.mb-1 {
+    font-size: 12px;
+    color: #555;
+}
+
+.underline {
+    height: 4px;
+    /* Fixed height */
+    width: 4rem;
+    background-color: green;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+
+/*----blog styling----*/
+
+.blog h1 {
+    color: green;
+    font-size: medium;
+}
+
+.blog h2 {
+    color: #868a8f;
+}
+
+.blog ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.blog li {
+    margin: 10px 0;
+}
+
+/*-----community styling----*/
+.community h1 {
+    color: #333;
+}
+
+.community {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+.community h2 {
+    color: green;
+    text-align: center;
+}
+
+.community h3 {
+    color: green;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.community p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.community-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.community-col-1,
+.community-col-2 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.community-col-1 {
+    margin-right: 80px;
+}
+
+.community-col-2 img {
+    width: 100%;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    background-color: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #e2edf7;
+}
+
 
 
 
