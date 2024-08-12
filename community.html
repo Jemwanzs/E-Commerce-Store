@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMStore | Ecommerce Website</title>
+    <title>StoreJMS</title>
     <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png"><!----fav-icon for the browser---->
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -51,7 +54,7 @@
                     </p>
 
                     <h3>Register Now</h3>
-                    <form action="mailto:jamosammy@gmail.com" method="post" enctype="text/plain">
+                    <form id="communityForm">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -76,6 +79,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Footer -->
     <div class="footer">
@@ -123,18 +127,48 @@
         </div>
     </div>
 
-    <!-- Menu Toggle Script -->
+    <!--------js for menu toggle-->
     <script>
         var menuItems = document.getElementById("menuItems");
         menuItems.style.maxHeight = "0px";
         function menutoggle() {
             if (menuItems.style.maxHeight == "0px") {
                 menuItems.style.maxHeight = "1000px";
-            } else {
+            }
+            else {
                 menuItems.style.maxHeight = "0px";
             }
         }
     </script>
+
+    <!------js for to submit form------>
+    <script>
+        // Initialize EmailJS
+        emailjs.init("dKjIUTAd9JasJPqGX"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
+
+        document.getElementById("communityForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Check if all required fields are filled
+            var form = event.target;
+            if (!form.checkValidity()) {
+                // If not all required fields are filled, show an alert or handle accordingly
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+            // Send email
+            emailjs.sendForm("service_ra9936u", "template_yhulkir", form)
+                .then(function (response) {
+                    alert("Registration successful!");
+                    form.reset(); // Optionally reset the form after successful submission
+                }, function (error) {
+                    alert("Failed to register. Please try again later.");
+                });
+        });
+    </script>
+
+
 </body>
 
 </html>

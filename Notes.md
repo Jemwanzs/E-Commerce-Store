@@ -21,3 +21,11 @@ HOME page complted;
     <Cart page>
     Finally;
     <Account page>
+
+
+NOTE:
+    <EmailJS>
+    Used emailjs.com to submit forms' data
+    USER_ID: <service_ra9936u>
+    SERVICE_ID: <service_ra9936u>
+    TEMPLATE_ID: <template_yhulkir>

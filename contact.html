@@ -10,6 +10,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" href="images/favicon.png" type="image/png"><!----fav-icon for the browser---->
+
+    <!--handle message submition-->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -43,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h6>Contact Form</h6>
-                        <form action="submit_form.php" method="post">
+                        <form id="contactForm">
                             <div class="form-groupContact">
                                 <label class="mb-1" for="fullName">Full Name:</label>
                                 <input type="text" id="fullName" name="fullName" class="form-control"
@@ -68,6 +75,7 @@
                                 <button type="submit" class="btn btn-primary shadow">Send Message</button>
                             </div>
                         </form>
+
                     </div>
                     <div class="col-md-6 border-start">
                         <h5 class="main-heading">Address Information</h5>
@@ -141,6 +149,33 @@
             }
         }
     </script>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init("dKjIUTAd9JasJPqGX"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
+
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Check if all required fields are filled
+            var form = event.target;
+            if (!form.checkValidity()) {
+                // If not all required fields are filled, show an alert or handle accordingly
+                alert("Please fill out all required fields.");
+                return;
+            }
+
+            // Send email
+            emailjs.sendForm("service_ra9936u", "template_yhulkir", form)
+                .then(function (response) {
+                    alert("Message sent successfully!");
+                    form.reset(); // Optionally reset the form after successful submission
+                }, function (error) {
+                    alert("Failed to send message. Please try again later.");
+                });
+        });
+    </script>
+
 
 </body>
 
