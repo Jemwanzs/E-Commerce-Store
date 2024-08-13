@@ -97,6 +97,7 @@ p {
     transition: 0.5s;
 }
 
+
 .btn:hover {
     background: #2b091b;
     /*change color on pointing*/
@@ -892,10 +893,57 @@ form a {
     background-color: #e2edf7;
 }
 
+.CartEmailBtn {
+    display: inline-block;
+    background: #09a724;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+    border: none;
+}
 
+.CartEmailBtn:hover {
+    background-color: orange;
+}
 
+.CartPrintBtn {
+    display: inline-block;
+    background: #777;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+    border: none;
+}
 
+.CartPrintBtn:hover {
+    background-color: orange;
+}
 
+/* print the cart table below */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #cartTable,
+    #cartTable * {
+        visibility: visible;
+    }
+
+    #cartTable {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+h4:hover {
+    color: green;
+}
 
 
 

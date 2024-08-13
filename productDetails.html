@@ -1,3 +1,4 @@
+<!-- Product Details Page -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,14 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoreJMS</title>
-    <link rel="stylesheet" href="style.css"> <!-- connect to the styling css-->
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" href="images/favicon.png" type="image/png"><!----fav-icon for the browser---->
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
 
 <body>
+    <!-- Header and Navigation as before -->
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -36,12 +38,13 @@
             </div>
         </div>
     </div>
-    <!---------product details-------->
+
     <div class="container product-details">
         <div class="row">
             <div class="col-2">
                 <img src="images/patek1.jpg" width="100%" id="productImg">
                 <div class="small-img-row">
+                    <!-- Small images -->
                     <div class="small-img-column">
                         <img src="images/patek8.webp" width="100%" class="small-img">
                     </div>
@@ -61,7 +64,9 @@
                 <h1 id="productName">Product Name</h1>
                 <h4 id="productPrice">$ 0.00</h4>
 
-                <select>
+                <select id="productColor">
+                    <option>Select color</option>
+                    <!-- Color options -->
                     <option>Select color</option>
                     <option>White</option>
                     <option>Black</option>
@@ -71,25 +76,14 @@
                     <option>Maroon</option>
                     <option>Other</option>
                 </select>
-                <input type="number" value="1" class="input-style" min="0">
-                <a href="" class="btn">ADD TO CART</a>
+                <input type="number" id="productQuantity" value="1" class="input-style" min="1">
+                <a href="#" id="addToCart" class="btn">ADD TO CART</a>
                 <h3>Details <i class="fa-solid fa-indent"></i> </h3>
-                <p>Experience timeless elegance with this product. Its exceptional craftsmanship and design make it the
-                    ultimate luxury statement. Elevate your style today.</p>
+                <p>Product description...</p>
             </div>
         </div>
     </div>
-    <!-------title------>
 
-    <div class="container">
-        <div class="row row-2">
-            <h2>More Products</h2>
-            <p>explore...</p>
-        </div>
-    </div>
-
-
-    <!-----update product details in the cart----->
     <script>
         function getQueryParams() {
             const params = {};
@@ -106,43 +100,31 @@
             const params = getQueryParams();
             document.getElementById('productName').textContent = params.name || 'Product Name';
             document.getElementById('productPrice').textContent = '$ ' + (params.price || '0.00');
-            document.getElementById('productImg').src = params.image || 'images/default.jpg'; // Fallback image if no image parameter
+            document.getElementById('productImg').src = params.image || 'images/default.jpg';
         }
+
+        document.getElementById('addToCart').addEventListener('click', function () {
+            const name = document.getElementById('productName').textContent;
+            const price = document.getElementById('productPrice').textContent.replace('$ ', '');
+            const quantity = document.getElementById('productQuantity').value;
+            const color = document.getElementById('productColor').value;
+
+            const cartItem = {
+                name: name,
+                price: parseFloat(price),
+                quantity: parseInt(quantity),
+                color: color
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert('Item added to cart');
+        });
 
         updateProductDetails();
     </script>
-
-
-    <!------js to toggle images of attached to the bigger image for better view before adding to cart ------>
-    <script>
-        var productImg = document.getElementById("productImg");
-        var smallImg = document.getElementsByClassName("small-img");
-
-        smallImg[0].onclick = function () {
-            productImg.src = smallImg[0].src;
-        }
-        smallImg[1].onclick = function () {
-            productImg.src = smallImg[1].src;
-        }
-        smallImg[2].onclick = function () {
-            productImg.src = smallImg[2].src;
-        }
-        smallImg[3].onclick = function () {
-            productImg.src = smallImg[3].src;
-        }
-    </script>
-
-    <script>
-        function menutoggle() {
-            var menuItems = document.getElementById("menuItems");
-            if (menuItems.style.display === "block") {
-                menuItems.style.display = "none";
-            } else {
-                menuItems.style.display = "block";
-            }
-        }
-    </script>
-
 </body>
 
 </html>
