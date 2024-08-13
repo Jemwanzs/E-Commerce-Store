@@ -771,6 +771,28 @@ form a {
     margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+    #menuItems {
+        display: none;
+        /* Hide menu items on small screens */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menuItems.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar .logo img {
+        width: 100px;
+        /* Adjust size for mobile */
+    }
+}
+
 
 /*----blog styling----*/
 
