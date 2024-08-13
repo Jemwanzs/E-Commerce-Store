@@ -106,7 +106,7 @@
             const params = getQueryParams();
             document.getElementById('productName').textContent = params.name || 'Product Name';
             document.getElementById('productPrice').textContent = '$ ' + (params.price || '0.00');
-            document.getElementById('productImgs').src = params.image || 'images/default.jpg'; // Fallback image if no image parameter
+            document.getElementById('productImg').src = params.image || 'images/default.jpg'; // Fallback image if no image parameter
         }
 
         updateProductDetails();
