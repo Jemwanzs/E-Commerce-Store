@@ -29,10 +29,10 @@
                         <!--add clickable menu using tag <a></a> to link pages-->
                         <li><a href="products.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="account.html">Account</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="community.html">Join Community</a></li>
+                        <li><a href="account.html">Account</a></li>
                         <li><a href="index.html">Home</a></li>
                     </ul>
                 </nav>
@@ -72,7 +72,7 @@
             </div>
 
         </table>
-        <div class="small-container">
+        <div class="container">
             <button onclick="printCart()" class="CartPrintBtn">Print Cart</button>
             <button onclick="sendEmail()" class="CartEmailBtn">Send to Email</button>
         </div>
@@ -157,63 +157,52 @@
         loadCart();
     </script>
 
-
-    <!--
-    <script>
-        function loadCart() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartTable = document.getElementById('cartTable');
-            let subtotal = 0;
-
-            cart.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>
-                        <div class="cart-info">
-                            <img src="images/default.jpg" alt="Product Image">
-                            <div>
-                                <p>${item.name}</p>
-                                <small>$ ${item.price}</small>
-                            </div>
-                        </div>
-                    </td>
-                    <td>${item.quantity}</td>
-                    <td>$ ${item.price * item.quantity}</td>
-                    <td>${item.color}</td>
-                    <td><a href="#" onclick="removeItem('${item.name}')">Remove</a></td>
-                `;
-                cartTable.appendChild(row);
-                subtotal += item.price * item.quantity;
-            });
-
-            const vat = subtotal * 0.16; // 16% VAT
-            const total = subtotal + vat;
-
-            document.getElementById('subtotal').textContent = `$ ${subtotal.toFixed(2)}`;
-            document.getElementById('vat').textContent = `$ ${vat.toFixed(2)}`;
-            document.getElementById('total').textContent = `$ ${total.toFixed(2)}`;
-        }
-
-        function removeItem(name) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.filter(item => item.name !== name);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.reload();
-        }
-
-        function printCart() {
-            window.print();
-        }
-
-        function sendEmail() {
-            // Implement email sending logic
-            alert('Email sending feature is not implemented.');
-        }
-
-        loadCart();
-    </script>-->
-
     <!-------JS FOR SEND EMAIL -->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <img src="images/logo3.png" alt="Footer Logo">
+                    <p>Indulge in our stunning collection of high-end watches, rings, and chains, alongside the latest
+                        iPhones and AirPods. Don't miss our dazzling Gold Stones - the perfect touch of elegance—James
+                        Sammy, Director and Founder</p>
+                </div>
+                <div class="footer-col-2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="community.html">Join Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="https://twitter.com">Twitter</a></li>
+                        <li><a href="https://instagram.com">Instagram</a></li>
+                        <li><a href="https://youtube.com">YouTube</a></li>
+                        <li><a href="https://facebook.com">Facebook</a></li>
+                        <li><a href="https://tiktok.com">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Download Our App</h3>
+                    <p>Android & iOS users</p>
+                    <div class="app-logo">
+                        <img src="images/playstore.png" alt="Play Store">
+                        <img src="images/appstore.png" alt="App Store">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
+        </div>
+    </div>
 
     <script>
         emailjs.init("dKjIUTAd9JasJPqGX"); // Replace with your EmailJS user ID
@@ -246,6 +235,20 @@
     </script>
 
     <!------->
+
+    <!--------menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "1000px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
 
 </body>
 
