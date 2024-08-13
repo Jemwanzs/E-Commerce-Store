@@ -917,26 +917,34 @@ form a {
 }
 
 /* print the cart table below */
+
 @media print {
-    body * {
+    body .navbar * {
         visibility: hidden;
     }
 
-    #cartTable,
-    #cartTable * {
-        visibility: visible;
+    .CartPrintBtn,
+    .CartEmailBtn {
+        display: none;
     }
 
     #cartTable {
-        position: absolute;
-        left: 0;
-        top: 0;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #cartTable th,
+    #cartTable td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
     }
 }
 
 h4:hover {
     color: green;
 }
+
 
 
 

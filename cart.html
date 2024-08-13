@@ -47,37 +47,118 @@
         <table id="cartTable">
             <tr>
                 <th>Item</th>
+                <th>Action</th>
+                <th>Color</th>
                 <th>Qty</th>
                 <th>Subtotal</th>
-                <th>Color</th>
-                <th>Action</th>
             </tr>
             <!-- Cart items will be inserted here -->
 
+            <div class="total-cost">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="subtotal">$ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td>VAT Tax</td>
+                        <td id="vat">$ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total">$ 0.00</td>
+                    </tr>
+                </table>
+            </div>
+
         </table>
-
-        <div class="total-cost">
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td id="subtotal">$ 0.00</td>
-                </tr>
-                <tr>
-                    <td>VAT Tax</td>
-                    <td id="vat">$ 0.00</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td id="total">$ 0.00</td>
-                </tr>
-            </table>
+        <div class="small-container">
+            <button onclick="printCart()" class="CartPrintBtn">Print Cart</button>
+            <button onclick="sendEmail()" class="CartEmailBtn">Send to Email</button>
         </div>
-
-        <button onclick="printCart()" class="CartPrintBtn">Print Cart</button>
-        <button onclick="sendEmail()" class="CartEmailBtn">Send to Email</button>
     </div>
 
 
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartTable = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                        <td>
+                            <div class="cart-info">
+                                <img src="${item.image || 'images/default.jpg'}" alt="Product Image" style="width: 50px;">
+                                <div>
+                                    <p>${item.name}</p>
+                                    <small>$ ${item.price}</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td><a href="#" onclick="removeItem('${item.name}')">Remove</a></td>
+                        <td>${item.color}</td>
+                        <td>${item.quantity}</td>
+                        <td>$ ${(item.price * item.quantity).toFixed(2)}</td>
+
+                    `;
+                cartTable.appendChild(row);
+                subtotal += item.price * item.quantity;
+            });
+
+            const vat = subtotal * 0.16; // 16% VAT
+            const total = subtotal + vat;
+
+            document.getElementById('subtotal').textContent = `$ ${subtotal.toFixed(2)}`;
+            document.getElementById('vat').textContent = `$ ${vat.toFixed(2)}`;
+            document.getElementById('total').textContent = `$ ${total.toFixed(2)}`;
+        }
+
+        function removeItem(name) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.name !== name);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+        }
+
+        function printCart() {
+            window.print();
+        }
+
+        function sendEmail() {
+            emailjs.init("dKjIUTAd9JasJPqGX"); // Replace with your EmailJS user ID
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartDetails = 'Cart Details:\n\n';
+
+            cart.forEach(item => {
+                cartDetails += `Name: ${item.name}\nPrice: $${item.price}\nQuantity: ${item.quantity}\nColor: ${item.color}\n\n`;
+            });
+
+            const subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('$ ', ''));
+            const vat = parseFloat(document.getElementById('vat').textContent.replace('$ ', ''));
+            const total = parseFloat(document.getElementById('total').textContent.replace('$ ', ''));
+
+            cartDetails += `Subtotal: $${subtotal.toFixed(2)}\nVAT: $${vat.toFixed(2)}\nTotal: $${total.toFixed(2)}`;
+
+            emailjs.send("service_ra9936u", "template_yhulkir", {
+                from_name: 'Your Store',
+                to_name: 'Customer',
+                subject: 'Cart Details',
+                message: cartDetails
+            }).then(function (response) {
+                alert('Email sent successfully!');
+            }, function (error) {
+                alert('Failed to send email. Please contact us.');
+            });
+        }
+
+        loadCart();
+    </script>
+
+
+    <!--
     <script>
         function loadCart() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -130,7 +211,7 @@
         }
 
         loadCart();
-    </script>
+    </script>-->
 
     <!-------JS FOR SEND EMAIL -->
 
