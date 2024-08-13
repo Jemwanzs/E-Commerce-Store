@@ -42,20 +42,20 @@
     <div class="container product-details">
         <div class="row">
             <div class="col-2">
-                <img src="images/patek1.jpg" width="100%" id="productImg">
+                <img src="images/patek1.jpg" width="100%" id="productImg" class="circular-img2">
                 <div class="small-img-row">
                     <!-- Small images -->
                     <div class="small-img-column">
-                        <img src="images/patek8.webp" width="100%" class="small-img">
+                        <img src="images/patek8.webp" width="100%" class="small-img" class="circular-img">
                     </div>
                     <div class="small-img-column">
-                        <img src="images/patek4.jpeg" width="100%" class="small-img">
+                        <img src="images/patek4.jpeg" width="100%" class="small-img" class="circular-img">
                     </div>
                     <div class="small-img-column">
-                        <img src="images/patek4.webp" width="100%" class="small-img">
+                        <img src="images/patek4.webp" width="100%" class="small-img" class="circular-img">
                     </div>
                     <div class="small-img-column">
-                        <img src="images/patek5.webp" width="100%" class="small-img">
+                        <img src="images/patek5.webp" width="100%" class="small-img" class="circular-img">
                     </div>
                 </div>
             </div>
@@ -77,42 +77,116 @@
                     <option>Other</option>
                 </select>
                 <input type="number" id="productQuantity" value="1" class="input-style" min="1">
-                <a href="#" id="addToCart" class="btn">ADD TO CART</a>
-                <h3>Details <i class="fa-solid fa-indent"></i> </h3>
+                <a href="#" id="addToCart" class="btn" onclick="addToCart()">ADD TO CART</a>
+                <h3>Details <i class="fa-solid fa-indent"></i></h3>
                 <p>Product description...</p>
             </div>
         </div>
     </div>
 
     <script>
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search.substring(1);
-            const queryArray = queryString.split('&');
-            for (let i = 0; i < queryArray.length; i++) {
-                const pair = queryArray[i].split('=');
-                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        document.addEventListener('DOMContentLoaded', function () {
+            const addToCartButton = document.getElementById('addToCart');
+
+            // Ensure the event listener is added only once
+            if (addToCartButton) {
+                addToCartButton.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default action
+
+                    // Check if the button is already in the process of being clicked
+                    if (addToCartButton.hasAttribute('data-clicked')) {
+                        return; // Exit if already clicked
+                    }
+
+                    // Mark the button as clicked
+                    addToCartButton.setAttribute('data-clicked', 'true');
+
+                    addToCart(); // Add the item to the cart
+
+                    // Redirect to the cart page
+                    window.location.href = 'cart.html';
+
+                    // Optional: Reset the clicked state after a delay
+                    setTimeout(() => {
+                        addToCartButton.removeAttribute('data-clicked');
+                    }, 1000); // Reset after 1 second
+                });
             }
-            return params;
+
+            // Function to get query parameters from the URL
+            function getQueryParams() {
+                const params = new URLSearchParams(window.location.search);
+                const result = {};
+                for (const [key, value] of params.entries()) {
+                    result[key] = decodeURIComponent(value);
+                }
+                return result;
+            }
+
+            // Function to update product details on the page
+            function updateProductDetails() {
+                const params = getQueryParams();
+                document.getElementById('productName').textContent = params.name || 'Product Name';
+                document.getElementById('productPrice').textContent = '$' + (params.price || '0.00');
+                document.getElementById('productImg').src = params.image || 'images/default.jpg';
+            }
+
+            // Function to add the item to the cart
+            function addToCart() {
+                const name = document.getElementById('productName').textContent;
+                const priceText = document.getElementById('productPrice').textContent;
+                const price = parseFloat(priceText.replace('$', '').trim());
+                const quantity = parseInt(document.getElementById('productQuantity').value, 10);
+                const color = document.getElementById('productColor') ? document.getElementById('productColor').value : 'N/A';
+
+                const cartItem = {
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+                    color: color
+                };
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(cartItem);
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert('Item added to cart');
+            }
+
+            // Update product details on page load
+            updateProductDetails();
+        });
+    </script>
+
+    <!--
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const result = {};
+            for (const [key, value] of params.entries()) {
+                result[key] = decodeURIComponent(value);
+            }
+            return result;
         }
 
         function updateProductDetails() {
             const params = getQueryParams();
             document.getElementById('productName').textContent = params.name || 'Product Name';
-            document.getElementById('productPrice').textContent = '$ ' + (params.price || '0.00');
+            document.getElementById('productPrice').textContent = '$' + (params.price || '0.00');
             document.getElementById('productImg').src = params.image || 'images/default.jpg';
         }
 
-        document.getElementById('addToCart').addEventListener('click', function () {
+        function addToCart() {
             const name = document.getElementById('productName').textContent;
-            const price = document.getElementById('productPrice').textContent.replace('$ ', '');
-            const quantity = document.getElementById('productQuantity').value;
-            const color = document.getElementById('productColor').value;
+            const priceText = document.getElementById('productPrice').textContent;
+            const price = parseFloat(priceText.replace('$', '').trim());
+            const quantity = parseInt(document.getElementById('productQuantity').value, 10);
+            const color = document.getElementById('productColor') ? document.getElementById('productColor').value : 'N/A';
 
             const cartItem = {
                 name: name,
-                price: parseFloat(price),
-                quantity: parseInt(quantity),
+                price: price,
+                quantity: quantity,
                 color: color
             };
 
@@ -121,9 +195,63 @@
             localStorage.setItem('cart', JSON.stringify(cart));
 
             alert('Item added to cart');
-        });
+        }
 
-        updateProductDetails();
+        document.addEventListener('DOMContentLoaded', function () {
+            const addToCartButton = document.getElementById('addToCart');
+            let buttonClicked = false;
+
+            addToCartButton.addEventListener('click', function (event) {
+                if (buttonClicked) return; // Prevent multiple clicks
+
+                event.preventDefault(); // Prevent the default action
+                buttonClicked = true; // Set the flag to prevent further clicks
+
+                addToCart(); // Add the item to the cart
+
+                // Optional: You can reset the flag after a delay if needed
+                setTimeout(() => {
+                    buttonClicked = false;
+                }, 1000); // Reset after 1 second
+
+                window.location.href = 'cart.html'; // Redirect to the cart page
+            });
+
+            updateProductDetails();
+        });
+    </script>
+-->
+
+    <!------js to toggle images of attached to the bigger image for better view before adding to cart ------>
+    <script>
+        var productImg = document.getElementById("productImg");
+        var smallImg = document.getElementsByClassName("small-img");
+
+        smallImg[0].onclick = function () {
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function () {
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function () {
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function () {
+            productImg.src = smallImg[3].src;
+        }
+    </script>
+    <!--------menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "1000px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
     </script>
 </body>
 

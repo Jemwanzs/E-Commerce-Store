@@ -73,8 +73,8 @@
                     </form>
                 </div>
                 <div class="community-col-2">
-                    <img src="images/patek4.webp" width="200px" height="380px">
-                    <img src="images/communityPhoto1.webp" width="150px">
+                    <img src="images/patek4.webp" width="200px" height="380px" class="circular-img">
+                    <img src="images/communityPhoto1.webp" width="150px" class="circular-img">
                 </div>
             </div>
         </div>
@@ -127,20 +127,6 @@
         </div>
     </div>
 
-    <!--------js for menu toggle-->
-    <script>
-        var menuItems = document.getElementById("menuItems");
-        menuItems.style.maxHeight = "0px";
-        function menutoggle() {
-            if (menuItems.style.maxHeight == "0px") {
-                menuItems.style.maxHeight = "1000px";
-            }
-            else {
-                menuItems.style.maxHeight = "0px";
-            }
-        }
-    </script>
-
     <!------js for to submit form------>
     <script>
         // Initialize EmailJS
@@ -167,6 +153,21 @@
                 });
         });
     </script>
+
+    <!--------js for menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "1000px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
 </body>
 
 </html>

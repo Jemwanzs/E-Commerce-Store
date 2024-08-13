@@ -134,19 +134,6 @@
         </div>
     </div>
 
-    <!-- Menu Toggle Script -->
-    <script>
-        var menuItems = document.getElementById("menuItems");
-        menuItems.style.maxHeight = "0px";
-        function menutoggle() {
-            if (menuItems.style.maxHeight == "0px") {
-                menuItems.style.maxHeight = "1000px";
-            } else {
-                menuItems.style.maxHeight = "0px";
-            }
-        }
-    </script>
-
     <script>
         // Initialize EmailJS
         emailjs.init("dKjIUTAd9JasJPqGX"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
@@ -173,6 +160,19 @@
         });
     </script>
 
+    <!--------js for menu toggle-->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "1000px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
 </body>
 
 </html>
