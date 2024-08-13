@@ -165,6 +165,7 @@ p {
     margin-bottom: 50px;
     transition: transform 0.5s;
     flex-direction: column;
+    text-align: center;
 }
 
 .col-4 img {
