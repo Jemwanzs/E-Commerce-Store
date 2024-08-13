@@ -87,25 +87,6 @@
         </div>
     </div>
 
-    <!------product--------->
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <img src="images/patek1.jpg" alt="Patek Philippe">
-                <h4>Patek Philippe</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <p>$ 100,000</p>
-            </div>
-            <!-- Repeat for other products -->
-        </div>
-    </div>
-
     <script>
         function getQueryParams() {
             const params = {};
@@ -127,6 +108,18 @@
 
         updateProductDetails();
     </script>
+
+    <script>
+        function menutoggle() {
+            var menuItems = document.getElementById("menuItems");
+            if (menuItems.style.display === "block") {
+                menuItems.style.display = "none";
+            } else {
+                menuItems.style.display = "block";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
