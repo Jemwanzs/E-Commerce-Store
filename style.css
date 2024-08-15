@@ -968,6 +968,270 @@ h4:hover {
 }
 
 
+/*Watches Style*/
+.Watches {
+    margin-top: 100px;
+    background-color: #f9f9f9;
+}
+
+.titleW {
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+.titleW::after {
+    content: '';
+    background: green;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.statAnalysis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.circle-progress-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-progress {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.circle-progress-bar {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 10;
+    stroke-dasharray: 282.6;
+    /* Circumference of the circle */
+    stroke-dashoffset: 282.6;
+    /* Starts as 100% (hidden) */
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+circle {
+    transition: stroke-dashoffset 0.5s;
+}
+
+text {
+    font-size: 20px;
+    fill: #333;
+    font-weight: bold;
+}
+
+.descriptionT {
+    width: 50%;
+}
+
+#descriptionT-text {
+    font-size: 16px;
+    color: #333;
+}
+
+
+/*Perfumes Style*/
+.Perfumes {
+    margin-top: 100px;
+    background-color: #fff;
+}
+
+.titleP {
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+.titleP::after {
+    content: '';
+    background: orange;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.statAnalysis2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.circle-progress-container2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-progress2 {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.circle-bg2 {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.circle-progress-bar2 {
+    fill: none;
+    stroke: orange;
+    stroke-width: 10;
+    stroke-dasharray: 282.6;
+    /* Circumference of the circle */
+    stroke-dashoffset: 282.6;
+    /* Starts as 100% (hidden) */
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+circle {
+    transition: stroke-dashoffset 0.5s;
+}
+
+text {
+    font-size: 20px;
+    fill: #333;
+    font-weight: bold;
+}
+
+.descriptionT2 {
+    width: 50%;
+}
+
+#descriptionT2-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/*Necklace Style*/
+.Necklaces {
+    margin-top: 100px;
+    background-color: #f9f9f9;
+}
+
+.titleN {
+    text-align: center;
+    margin: 0 auto 50px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+.titleN::after {
+    content: '';
+    background: rgb(170, 42, 121);
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.statAnalysis3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.circle-progress-container3 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-progress3 {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.circle-bg3 {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.circle-progress-bar3 {
+    fill: none;
+    stroke: rgb(170, 42, 121);
+    stroke-width: 10;
+    stroke-dasharray: 282.6;
+    /* Circumference of the circle */
+    stroke-dashoffset: 282.6;
+    /* Starts as 100% (hidden) */
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+circle {
+    transition: stroke-dashoffset 0.5s;
+}
+
+text {
+    font-size: 20px;
+    fill: #333;
+    font-weight: bold;
+}
+
+.descriptionT3 {
+    width: 50%;
+}
+
+#descriptionT3-text {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

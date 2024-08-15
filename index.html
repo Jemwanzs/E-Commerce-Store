@@ -77,14 +77,24 @@
     <!--product-->
     <div class="Watches">
         <div class="container">
-            <h2 class="title">Watches (Lavish-Boti)</h2>
-            <p class="description">Step out looking wow and different with our exclusive collection of lavish
-                watches.
-                Each
-                piece is
-                a symbol of
-                exceptional craftsmanship and style, designed to set you apart from the crowd.</p>
-
+            <section class="statAnalysis">
+                <div class="circle-progress-container">
+                    <svg class="circle-progress" viewBox="0 0 100 100">
+                        <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                        <circle id="circle-progress-bar" class="circle-progress-bar" cx="50" cy="50" r="45"></circle>
+                        <text id="circle-progress-text" x="50" y="50" text-anchor="middle" dy=".3em">0%</text>
+                    </svg>
+                    <h2 class="titleW">Watches (Lavish-Boti)</h2>
+                </div>
+                <div class="descriptionT">
+                    <p id="descriptionT-text">Step out looking wow and different with our exclusive collection of lavish
+                        watches.
+                        Each
+                        piece is
+                        a symbol of
+                        exceptional craftsmanship and style, designed to set you apart from the crowd.</p>
+                </div>
+            </section>
 
             <div class="row">
                 <div class="col-4">
@@ -150,13 +160,25 @@
             </div>
         </div>
     </div>
-    <div class="perfumes">
+    <div class="Perfumes">
         <div class="container">
-            <h2 class="title">Perfumes ('Dooms')</h2>
-            <p class="description">Elevate your fragrance game with our exclusive collection of lavish perfumes, now
-                available in Kenya.
-                Discover an array
-                of exquisite scents that embody elegance and sophistication.</p>
+            <section class="statAnalysis2">
+                <div class="circle-progress-container2">
+                    <svg class="circle-progress2" viewBox="0 0 100 100">
+                        <circle class="circle-bg2" cx="50" cy="50" r="45"></circle>
+                        <circle id="circle-progress-bar2" class="circle-progress-bar2" cx="50" cy="50" r="45"></circle>
+                        <text id="circle-progress-text2" x="50" y="50" text-anchor="middle" dy=".3em">0%</text>
+                    </svg>
+                    <h2 class="titleP">Perfumes ('Dooms')</h2>
+                </div>
+                <div class="descriptionT2">
+                    <p id="descriptionT2-text">Elevate your fragrance game with our exclusive collection of lavish
+                        perfumes, now
+                        available in Kenya.
+                        Discover an array
+                        of exquisite scents that embody elegance and sophistication.</p>
+                </div>
+            </section>
             <div class="row">
                 <div class="col-4">
                     <a href="productDetails.html?name=Dior%20Sauvage&price=150"><img src="images/doom1.webp"
@@ -222,13 +244,26 @@
 
         </div>
     </div>
-    <div class="necklaces">
+    <div class="Necklaces">
         <div class="container">
-            <h2 class="title">Necklaces</h2>
-            <p class="description">Illuminate your style with our exquisite collection of lavish necklaces, now
-                available.
-                Each necklace is a
-                piece of art, meticulously crafted to enhance your elegance and elevate your look.</p>
+            <section class="statAnalysis3">
+                <div class="circle-progress-container3">
+                    <svg class="circle-progress3" viewBox="0 0 100 100">
+                        <circle class="circle-bg3" cx="50" cy="50" r="45"></circle>
+                        <circle id="circle-progress-bar3" class="circle-progress-bar3" cx="50" cy="50" r="45"></circle>
+                        <text id="circle-progress-text3" x="50" y="50" text-anchor="middle" dy=".3em">0%</text>
+                    </svg>
+                    <h2 class="titleN">Necklaces</h2>
+                </div>
+                <div class="descriptionT3">
+                    <p id="descriptionT3-text">Illuminate your style with our exquisite collection of lavish necklaces,
+                        now
+                        available.
+                        Each necklace is a
+                        piece of art, meticulously crafted to enhance your elegance and elevate your look.</p>
+                </div>
+            </section>
+
             <div class="row">
                 <div class="col-4">
                     <a href="productDetails.html?name=Cartier%20Love&price=6,000"><img src="images/chain1.jpg"
@@ -329,6 +364,7 @@
         </div>
     </div>
 
+
     <!-------Testimonials------->
     <div class="testmonial">
         <div class="container">
@@ -360,7 +396,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <img src="images/client2.png">
+                    <img src="images/client4.png">
                     <h3>Libbie Sonia</h3>
                 </div>
                 <div class="col-3">
@@ -533,6 +569,93 @@
             <p class="copyright">© 2024 JMS | James Sammy. All Rights Reserved.</p>
         </div>
     </div>
+
+    <!--WATCHES-->
+    <script>
+        document.addEventListener('scroll', function () {
+            const section = document.querySelector('.statAnalysis');
+            const progressBar = document.getElementById('circle-progress-bar');
+            const progressText = document.getElementById('circle-progress-text');
+            const descriptionText = document.getElementById('descriptionT-text');
+
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
+                // Calculate the percentage of how much the section is in view
+                const scrollPosition = windowHeight - sectionTop;
+                const sectionHeight = section.offsetHeight;
+                const percentage = Math.min(75, (scrollPosition / sectionHeight) * 75);
+
+                const radius = 45;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (percentage / 100 * circumference);
+
+                progressBar.style.strokeDashoffset = offset;
+                progressText.textContent = `${Math.round(percentage)}%`;
+                descriptionText.textContent = `${Math.round(percentage)}% will; Step out in style and make a statement with our exclusive collection of lavish watches. Our collection designed to wow and set you apart, you won’t want to miss out. Each piece showcases exceptional craftsmanship and unique design, ensuring you stand out from the crowd.`;
+            }
+        });
+
+    </script>
+
+    <!--PERFUMES-->
+    <script>
+        document.addEventListener('scroll', function () {
+            const section = document.querySelector('.statAnalysis2');
+            const progressBar = document.getElementById('circle-progress-bar2');
+            const progressText = document.getElementById('circle-progress-text2');
+            const descriptionText = document.getElementById('descriptionT2-text');
+
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
+                // Calculate the percentage of how much the section is in view
+                const scrollPosition = windowHeight - sectionTop;
+                const sectionHeight = section.offsetHeight;
+                const percentage = Math.min(80, (scrollPosition / sectionHeight) * 80);
+
+                const radius = 45;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (percentage / 100 * circumference);
+
+                progressBar.style.strokeDashoffset = offset;
+                progressText.textContent = `${Math.round(percentage)}%`;
+                descriptionText.textContent = `${Math.round(percentage)}% will; Elevate their fragrance game with our exclusive collection of lavish perfumes, now available in Kenya. Explore a range of exquisite scents that exude elegance and sophistication, perfect for making a lasting impression.`;
+            }
+        });
+
+    </script>
+
+    <!--NECKLACES-->
+    <script>
+        document.addEventListener('scroll', function () {
+            const section = document.querySelector('.statAnalysis3');
+            const progressBar = document.getElementById('circle-progress-bar3');
+            const progressText = document.getElementById('circle-progress-text3');
+            const descriptionText = document.getElementById('descriptionT3-text');
+
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
+                // Calculate the percentage of how much the section is in view
+                const scrollPosition = windowHeight - sectionTop;
+                const sectionHeight = section.offsetHeight;
+                const percentage = Math.min(50, (scrollPosition / sectionHeight) * 50);
+
+                const radius = 45;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (percentage / 100 * circumference);
+
+                progressBar.style.strokeDashoffset = offset;
+                progressText.textContent = `${Math.round(percentage)}%`;
+                descriptionText.textContent = `${Math.round(percentage)}% will; Illuminate your style with our stunning collection of lavish necklaces, now available. Each piece is a work of art, meticulously crafted to enhance your elegance and elevate your look.`;
+            }
+        });
+
+    </script>
 
     <!--------menu toggle-->
     <script>
