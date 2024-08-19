@@ -570,7 +570,7 @@
         </div>
     </div>
 
-    <!--WATCHES-->
+    <!-- WATCHES -->
     <script>
         document.addEventListener('scroll', function () {
             const section = document.querySelector('.statAnalysis');
@@ -579,27 +579,38 @@
             const descriptionText = document.getElementById('descriptionT-text');
 
             const sectionTop = section.getBoundingClientRect().top;
+            const sectionBottom = section.getBoundingClientRect().bottom;
+            const sectionHeight = section.offsetHeight;
             const windowHeight = window.innerHeight;
 
-            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
-                // Calculate the percentage of how much the section is in view
-                const scrollPosition = windowHeight - sectionTop;
-                const sectionHeight = section.offsetHeight;
-                const percentage = Math.min(75, (scrollPosition / sectionHeight) * 75);
-
-                const radius = 45;
-                const circumference = 2 * Math.PI * radius;
-                const offset = circumference - (percentage / 100 * circumference);
-
-                progressBar.style.strokeDashoffset = offset;
-                progressText.textContent = `${Math.round(percentage)}%`;
-                descriptionText.textContent = `${Math.round(percentage)}% will; Step out in style and make a statement with our exclusive collection of lavish watches. Our collection designed to wow and set you apart, you won’t want to miss out. Each piece showcases exceptional craftsmanship and unique design, ensuring you stand out from the crowd.`;
+            // Calculate how much of the section is in view
+            let percentage = 0;
+            if (sectionTop < windowHeight && sectionBottom > 0) {
+                if (sectionTop >= 0) {
+                    // Section is partially in view from the top
+                    percentage = ((windowHeight - sectionTop) / sectionHeight) * 75;
+                } else if (sectionBottom <= windowHeight) {
+                    // Section is fully in view
+                    percentage = 75;
+                } else {
+                    // Section is partially in view from the bottom
+                    percentage = ((sectionBottom) / sectionHeight) * 75;
+                }
             }
-        });
+            percentage = Math.max(0, Math.min(75, percentage));
 
+            const radius = 45;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percentage / 100 * circumference);
+
+            progressBar.style.strokeDashoffset = offset;
+            progressText.textContent = `${Math.round(percentage)}%`;
+            descriptionText.textContent = `${Math.round(percentage)}% will; Step out in style and make a statement with our exclusive collection of lavish watches. Our collection designed to wow and set you apart, you won’t want to miss out. Each piece showcases exceptional craftsmanship and unique design, ensuring you stand out from the crowd.`;
+        });
     </script>
 
     <!--PERFUMES-->
+
     <script>
         document.addEventListener('scroll', function () {
             const section = document.querySelector('.statAnalysis2');
@@ -608,24 +619,34 @@
             const descriptionText = document.getElementById('descriptionT2-text');
 
             const sectionTop = section.getBoundingClientRect().top;
+            const sectionBottom = section.getBoundingClientRect().bottom;
+            const sectionHeight = section.offsetHeight;
             const windowHeight = window.innerHeight;
 
-            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
-                // Calculate the percentage of how much the section is in view
-                const scrollPosition = windowHeight - sectionTop;
-                const sectionHeight = section.offsetHeight;
-                const percentage = Math.min(80, (scrollPosition / sectionHeight) * 80);
-
-                const radius = 45;
-                const circumference = 2 * Math.PI * radius;
-                const offset = circumference - (percentage / 100 * circumference);
-
-                progressBar.style.strokeDashoffset = offset;
-                progressText.textContent = `${Math.round(percentage)}%`;
-                descriptionText.textContent = `${Math.round(percentage)}% will; Elevate their fragrance game with our exclusive collection of lavish perfumes, now available in Kenya. Explore a range of exquisite scents that exude elegance and sophistication, perfect for making a lasting impression.`;
+            // Calculate how much of the section is in view
+            let percentage = 0;
+            if (sectionTop < windowHeight && sectionBottom > 0) {
+                if (sectionTop >= 0) {
+                    // Section is partially in view from the top
+                    percentage = ((windowHeight - sectionTop) / sectionHeight) * 80;
+                } else if (sectionBottom <= windowHeight) {
+                    // Section is fully in view
+                    percentage = 80;
+                } else {
+                    // Section is partially in view from the bottom
+                    percentage = ((sectionBottom) / sectionHeight) * 80;
+                }
             }
-        });
+            percentage = Math.max(0, Math.min(80, percentage));
 
+            const radius = 45;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percentage / 100 * circumference);
+
+            progressBar.style.strokeDashoffset = offset;
+            progressText.textContent = `${Math.round(percentage)}%`;
+            descriptionText.textContent = `${Math.round(percentage)}% will; Elevate their fragrance game with our exclusive collection of lavish perfumes, now available in Kenya. Explore a range of exquisite scents that exude elegance and sophistication, perfect for making a lasting impression.`;
+        });
     </script>
 
     <!--NECKLACES-->
@@ -637,24 +658,34 @@
             const descriptionText = document.getElementById('descriptionT3-text');
 
             const sectionTop = section.getBoundingClientRect().top;
+            const sectionBottom = section.getBoundingClientRect().bottom;
+            const sectionHeight = section.offsetHeight;
             const windowHeight = window.innerHeight;
 
-            if (sectionTop < windowHeight && sectionTop + section.offsetHeight > 0) {
-                // Calculate the percentage of how much the section is in view
-                const scrollPosition = windowHeight - sectionTop;
-                const sectionHeight = section.offsetHeight;
-                const percentage = Math.min(50, (scrollPosition / sectionHeight) * 50);
-
-                const radius = 45;
-                const circumference = 2 * Math.PI * radius;
-                const offset = circumference - (percentage / 100 * circumference);
-
-                progressBar.style.strokeDashoffset = offset;
-                progressText.textContent = `${Math.round(percentage)}%`;
-                descriptionText.textContent = `${Math.round(percentage)}% will; Illuminate your style with our stunning collection of lavish necklaces, now available. Each piece is a work of art, meticulously crafted to enhance your elegance and elevate your look.`;
+            // Calculate how much of the section is in view
+            let percentage = 0;
+            if (sectionTop < windowHeight && sectionBottom > 0) {
+                if (sectionTop >= 0) {
+                    // Section is partially in view from the top
+                    percentage = ((windowHeight - sectionTop) / sectionHeight) * 50;
+                } else if (sectionBottom <= windowHeight) {
+                    // Section is fully in view
+                    percentage = 50;
+                } else {
+                    // Section is partially in view from the bottom
+                    percentage = ((sectionBottom) / sectionHeight) * 50;
+                }
             }
-        });
+            percentage = Math.max(0, Math.min(50, percentage));
 
+            const radius = 45;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percentage / 100 * circumference);
+
+            progressBar.style.strokeDashoffset = offset;
+            progressText.textContent = `${Math.round(percentage)}%`;
+            descriptionText.textContent = `${Math.round(percentage)}% will; Illuminate your style with our stunning collection of lavish necklaces, now available. Each piece is a work of art, meticulously crafted to enhance your elegance and elevate your look.`;
+        });
     </script>
 
     <!--------menu toggle-->
