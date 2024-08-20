@@ -78,10 +78,19 @@ p {
 .circular-img {
     width: 75%;
     height: auto;
-    border-radius: 15%;
+    /* Ensures the height adjusts based on the width to maintain aspect ratio */
+    border-radius: 5%;
+    /* Makes the image fully circular */
     overflow: hidden;
     display: block;
     object-fit: cover;
+    /* Ensures the image covers the container while maintaining aspect ratio */
+    object-position: center;
+    /* Centers the image within the container */
+    margin: 0 auto;
+    /* Centers the image horizontally in its container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a subtle shadow for a more polished look */
 }
 
 .circular-img1 {
