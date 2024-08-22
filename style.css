@@ -275,7 +275,7 @@ small {
 .testmonial .col-3 {
     text-align: center;
     padding: 40px 20px;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);*/
     cursor: pointer;
     transition: transform 0.5s;
 }
@@ -292,8 +292,8 @@ small {
 }
 
 .fa.fa-quote-left {
-    font-size: 34px;
-    color: #fa634f;
+    font-size: 10px;
+    color: green;
 
 }
 
