@@ -1096,7 +1096,7 @@ h4:hover {
 
 .Watches {
     margin-top: 50px;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .titleW {
@@ -1213,14 +1213,6 @@ text {
         padding: 10px;
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -1348,16 +1340,10 @@ text {
 
 
 
-
-
-
-
-
-
 /*Necklace Style*/
 .Necklaces {
     margin-top: 50px;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .titleN {
