@@ -502,6 +502,14 @@ ul li a:hover {
 }
 
 /*----- All products -----*/
+
+.productsHead {
+    color: #1765be;
+    margin-top: 125px;
+    text-align: center;
+    font-size: x-large;
+}
+
 .row-2 {
     justify-content: space-between;
     margin: 100px auto 50px;
