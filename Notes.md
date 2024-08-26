@@ -79,3 +79,19 @@ Important Considerations:
 User Experience: Some of these methods can negatively impact user experience, so use them sparingly and thoughtfully.
 Not Foolproof: No method can completely prevent a determined user from copying your code. The goal is to make it more challenging, not impossible.
 Would you like to implement any of these methods or discuss further on how to apply them?
+
+
+
+
+<!--SEO (Search Engine Optimization)-->
+[Add Meta Tags for SEO
+<meta name="description" content="StoreJMS - Your destination for high-end watches, rings, chains, iPhones, and more.">
+<meta name="keywords" content="StoreJMS, watches, rings, chains, iPhones, AirPods, gold stones, mobile accessories">
+<meta name="author" content="James Sammy">
+
+[Improve Content with Keywords
+[Optimize Images with Alt Attributes
+    >Add descriptive <alt> attributes to all images to improve accessibility and SEO.
+[Use Descriptive Titles for Links
+    >Include titles in your anchor tags to provide more information to both users and search engines.
+    ><a href="products.html" title="View our range of products">Products</a>
